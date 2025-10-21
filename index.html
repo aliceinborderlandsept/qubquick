@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-x3g7kTcTSbumoTeCFi85y.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Software Helpdesk | Expert Support</title>
+    <title>QuickBooks Support | QBO Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,17 +21,14 @@
         }
 
         :root {
-            --primary: #2CA01C; /* Accounting green */
+            --primary: #2CA01C; /* QuickBooks green */
             --primary-dark: #1f7a15;
-            --secondary: #0077C5; /* Professional blue */
+            --secondary: #0077C5; /* Intuit blue */
             --dark: #333333;
             --light: #f8fafc;
             --gray: #64748b;
             --light-gray: #e2e8f0;
             --accent: #FF6633;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
         }
 
         body {
@@ -146,8 +150,8 @@
             transform: scale(1.05);
         }
 
-        /* Features Section */
-        .features-section {
+        /* Product Selection */
+        .product-selection {
             padding: 80px 0;
             background-color: white;
         }
@@ -169,27 +173,29 @@
             margin: 0 auto;
         }
 
-        .features-grid {
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .feature-card {
+        .product-card {
             background-color: var(--light);
             border-radius: 10px;
             padding: 30px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
-        .feature-card:hover {
+        .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
+        .product-icon {
             background-color: var(--primary);
             color: white;
             width: 70px;
@@ -202,54 +208,7 @@
             font-size: 1.8rem;
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        /* Software Support Section */
-        .software-support {
-            padding: 80px 0;
-            background-color: #f8fafc;
-        }
-
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .software-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .software-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .software-icon {
-            background-color: var(--secondary);
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-        }
-
-        .software-card h3 {
+        .product-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--dark);
@@ -313,46 +272,71 @@
             background-color: #0066b3;
         }
 
-        /* Services Section */
-        .services-section {
+        /* Shop Section */
+        .shop-section {
             padding: 80px 0;
-            background-color: white;
+            background-color: #f8fafc;
         }
 
-        .services-grid {
+        .shop-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .shop-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .products-shop-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .service-card {
-            background-color: var(--light);
+        .shop-card {
+            background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
         }
 
-        .service-card:hover {
+        .shop-card:hover {
             transform: translateY(-5px);
         }
 
-        .service-card-content {
+        .shop-card-content {
             padding: 25px;
         }
 
-        .service-card h3 {
+        .shop-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--dark);
         }
 
-        .service-card p {
-            color: var(--gray);
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
-        .service-button {
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .buy-button {
             background-color: var(--primary);
             color: white;
             border: none;
@@ -365,38 +349,38 @@
             width: 100%;
         }
 
-        .service-button:hover {
+        .buy-button:hover {
             background-color: var(--primary-dark);
         }
 
-        /* Knowledge Base Section */
-        .knowledge-section {
+        /* Learning Section */
+        .learning-section {
             padding: 80px 0;
-            background-color: #f8fafc;
+            background-color: white;
         }
 
-        .knowledge-content {
+        .learning-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
-        .knowledge-info {
+        .learning-info {
             flex: 1;
         }
 
-        .knowledge-info h2 {
+        .learning-info h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
 
-        .knowledge-info p {
+        .learning-info p {
             color: var(--gray);
             margin-bottom: 30px;
         }
 
-        .knowledge-phone {
+        .learning-phone {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
@@ -409,31 +393,31 @@
             background-color: rgba(44, 160, 28, 0.1);
         }
 
-        .knowledge-phone:hover {
+        .learning-phone:hover {
             background-color: rgba(44, 160, 28, 0.2);
             transform: scale(1.05);
         }
 
-        .knowledge-options {
+        .learning-options {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .knowledge-option {
-            background-color: white;
+        .learning-option {
+            background-color: var(--light);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .knowledge-option h3 {
+        .learning-option h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--dark);
         }
 
-        .knowledge-option p {
+        .learning-option p {
             color: var(--gray);
             margin-bottom: 15px;
         }
@@ -453,7 +437,7 @@
         /* Contact Section */
         .contact-section {
             padding: 80px 0;
-            background-color: white;
+            background-color: #f8fafc;
         }
 
         .contact-grid {
@@ -518,7 +502,7 @@
         }
 
         .customer-service {
-            background-color: var(--light);
+            background-color: white;
             padding: 25px;
             border-radius: 10px;
             text-align: center;
@@ -699,109 +683,6 @@
             background-color: #d1d5db;
         }
 
-        /* Status Section */
-        .status-section {
-            padding: 60px 0;
-            background-color: #f8fafc;
-        }
-
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .status-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .status-indicator {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-        }
-
-        .status-operational {
-            background-color: var(--success);
-        }
-
-        .status-degraded {
-            background-color: var(--warning);
-        }
-
-        .status-outage {
-            background-color: var(--danger);
-        }
-
-        .status-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .status-card p {
-            color: var(--gray);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            background-color: var(--light);
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .faq-question:hover {
-            background-color: #e2e8f0;
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            background-color: white;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 500px;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-
         /* Disclaimer */
         .disclaimer {
             padding: 40px 0;
@@ -926,7 +807,7 @@
                 gap: 20px;
             }
 
-            .knowledge-content {
+            .learning-content {
                 grid-template-columns: 1fr;
             }
 
@@ -936,15 +817,11 @@
         }
 
         @media (max-width: 576px) {
-            .features-grid {
+            .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .software-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
+            .products-shop-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -964,21 +841,21 @@
     <header>
         <div class="top-bar">
             <div class="container">
-                24/7 Accounting Software Support: +1-800-650-0424
+                TollFree: +1-734-796-7442
             </div>
         </div>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-text">AccountHelp Pro</div>
+                    <div class="logo-text">QBO Solutions</div>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#software">Software</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#knowledge">Knowledge Base</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Learning</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
                 <a href="#contact" class="cta-button">Get Support</a>
@@ -989,279 +866,169 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Expert Accounting Software Support</h1>
-            <p>Get instant help for all your accounting software needs - from installation and setup to troubleshooting and optimization.</p>
-            <div class="hero-phone" onclick="showCallModal('General Support')">24/7 Support: +1-800-650-0424</div>
-            <a href="#software" class="cta-button">Get Help Now</a>
+            <h1>Hello! Welcome to QuickBooks Support.</h1>
+            <p>Get instant help for buying, updating and fixing errors in your QuickBooks software.</p>
+            <div class="hero-phone" onclick="showCallModal('Main Support')">TollFree: +1-734-796-7442</div>
+            <a href="#products" class="cta-button">Get Started</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- Product Selection -->
+    <section class="product-selection" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Our Helpdesk?</h2>
-                <p>We provide comprehensive support for all major accounting software platforms</p>
+                <h2>Select a product</h2>
+                <p>Selecting a product below helps us to customize your help experience with us.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <h3>24/7 Expert Support</h3>
-                    <p>Round-the-clock assistance from certified accounting software specialists</p>
+                    <h3>QuickBooks Online</h3>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h3>Quick Problem Resolution</h3>
-                    <p>Fast and effective solutions to get your accounting software running smoothly</p>
+                    <h3>QuickBooks Desktop</h3>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fab fa-apple"></i>
                     </div>
-                    <h3>Data Security</h3>
-                    <p>Your financial data is protected with enterprise-grade security measures</p>
+                    <h3>QuickBooks for Mac</h3>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Training & Guidance</h3>
-                    <p>Comprehensive training to help you master your accounting software</p>
+                    <h3>QuickBooks Time</h3>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Software Support Section -->
-    <section class="software-support" id="software">
-        <div class="container">
-            <div class="section-title">
-                <h2>Software We Support</h2>
-                <p>Our experts are certified in all major accounting software platforms</p>
-            </div>
-            <div class="software-grid">
-                <div class="software-card" onclick="showCallModal('QuickBooks Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>QuickBooks</h3>
-                    <p>Desktop & Online versions</p>
+                    <h3>QuickBooks Commerce</h3>
                 </div>
-                <div class="software-card" onclick="showCallModal('Xero Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-cloud"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3>Xero</h3>
-                    <p>Cloud accounting platform</p>
-                </div>
-                <div class="software-card" onclick="showCallModal('Sage Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Sage</h3>
-                    <p>50cloud & Business Cloud</p>
-                </div>
-                <div class="software-card" onclick="showCallModal('FreshBooks Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>FreshBooks</h3>
-                    <p>Invoice & accounting software</p>
-                </div>
-                <div class="software-card" onclick="showCallModal('Zoho Books Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Zoho Books</h3>
-                    <p>Complete business solution</p>
-                </div>
-                <div class="software-card" onclick="showCallModal('Wave Support')">
-                    <div class="software-icon">
-                        <i class="fas fa-wave-square"></i>
-                    </div>
-                    <h3>Wave</h3>
-                    <p>Free accounting software</p>
+                    <h3>QuickBooks Payments</h3>
                 </div>
             </div>
 
             <div class="support-section">
                 <div class="support-content">
-                    <h3>Comprehensive Accounting Software Support</h3>
-                    <p>From simple installation issues to complex multi-company setups, our certified accounting software specialists have you covered.</p>
-                    <div class="support-phone" onclick="showCallModal('Technical Support')">Expert Help: +1-800-650-0424</div>
+                    <h3>QuickBooks Support For Every Situation</h3>
+                    <p>From single user installs to complex, multi-user QuickBooks Enterprise hosted setups, our award winning team of QuickBooks ProAdvisors has you covered.</p>
+                    <div class="support-phone" onclick="showCallModal('Technical Support')">+1-734-796-7442</div>
                 </div>
                 <div class="support-chat-container">
-                    <h4>Need immediate assistance?</h4>
-                    <p>Chat with our experts in real-time</p>
-                    <a href="#" class="support-chat">Start Live Chat</a>
+                    <h4>Need some help with QuickBooks Desktop?</h4>
+                    <p>We're here to help.</p>
+                    <a href="#" class="support-chat">Chat Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
+    <!-- Shop Section -->
+    <section class="shop-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive accounting software solutions for businesses of all sizes</p>
+            <div class="shop-title">
+                <h2>Shop by category</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Software Installation & Setup</h3>
-                        <p>Professional installation and configuration of your accounting software for optimal performance</p>
-                        <button class="service-button" onclick="showCallModal('Installation Service')">Get This Service</button>
+            <div class="products-shop-grid">
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Pro Plus Subscription</h3>
+                        <div class="price">
+                            <span class="current-price">$439.99</span>
+                            <span class="original-price">$549.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Data Migration & Conversion</h3>
-                        <p>Seamless transfer of your financial data between different accounting systems</p>
-                        <button class="service-button" onclick="showCallModal('Data Migration Service')">Get This Service</button>
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Enterprise Subscription</h3>
+                        <div class="price">
+                            <span class="current-price">$899.99</span>
+                            <span class="original-price">$4,499.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Troubleshooting & Repair</h3>
-                        <p>Diagnose and fix errors, crashes, and performance issues in your accounting software</p>
-                        <button class="service-button" onclick="showCallModal('Troubleshooting Service')">Get This Service</button>
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Mac 2021 - Non Subscription Version</h3>
+                        <div class="price">
+                            <span class="current-price">$499.99</span>
+                            <span class="original-price">$699.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Custom Reporting</h3>
-                        <p>Create tailored financial reports and dashboards for your specific business needs</p>
-                        <button class="service-button" onclick="showCallModal('Reporting Service')">Get This Service</button>
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Premier 2021 ACCT - Non Subscription Version</h3>
+                        <div class="price">
+                            <span class="current-price">$599.99</span>
+                            <span class="original-price">$699.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Training & Consultation</h3>
-                        <p>One-on-one or group training sessions to maximize your accounting software usage</p>
-                        <button class="service-button" onclick="showCallModal('Training Service')">Get This Service</button>
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Premier Plus Subscription</h3>
+                        <div class="price">
+                            <span class="current-price">$699.99</span>
+                            <span class="original-price">$799.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <h3>Integration Support</h3>
-                        <p>Connect your accounting software with other business applications and systems</p>
-                        <button class="service-button" onclick="showCallModal('Integration Service')">Get This Service</button>
+                <div class="shop-card">
+                    <div class="shop-card-content">
+                        <h3>QuickBooks Pro 2021 - Non Subscription Version</h3>
+                        <div class="price">
+                            <span class="current-price">$399.99</span>
+                            <span class="original-price">$699.99</span>
+                        </div>
+                        <button class="buy-button">BUY NOW</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Status Section -->
-    <section class="status-section">
+    <!-- Learning Section -->
+    <section class="learning-section">
         <div class="container">
-            <div class="section-title">
-                <h2>System Status</h2>
-                <p>Current status of supported accounting software platforms</p>
-            </div>
-            <div class="status-grid">
-                <div class="status-card">
-                    <div class="status-indicator status-operational"></div>
-                    <h3>QuickBooks</h3>
-                    <p>All systems operational</p>
-                </div>
-                <div class="status-card">
-                    <div class="status-indicator status-operational"></div>
-                    <h3>Xero</h3>
-                    <p>All systems operational</p>
-                </div>
-                <div class="status-card">
-                    <div class="status-indicator status-degraded"></div>
-                    <h3>Sage</h3>
-                    <p>Minor performance issues</p>
-                </div>
-                <div class="status-card">
-                    <div class="status-indicator status-operational"></div>
-                    <h3>FreshBooks</h3>
-                    <p>All systems operational</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Knowledge Base Section -->
-    <section class="knowledge-section" id="knowledge">
-        <div class="container">
-            <div class="knowledge-content">
-                <div class="knowledge-info">
-                    <h2>Knowledge Base & Resources</h2>
-                    <p>Access our comprehensive library of tutorials, guides, and troubleshooting articles.</p>
-                    <div class="knowledge-phone" onclick="showCallModal('Knowledge Base Support')">Need Help? +1-800-650-0424</div>
+            <div class="learning-content">
+                <div class="learning-info">
+                    <h2>Learn QuickBooks</h2>
+                    <p>Watch videos on the basics. Find courses for more detailed tips and tricks.</p>
+                    <div class="learning-phone" onclick="showCallModal('Learning Support')">+1-734-796-7442</div>
                     
-                    <div class="knowledge-options">
-                        <div class="knowledge-option">
-                            <h3>Video Tutorials</h3>
-                            <p>Step-by-step video guides for common accounting software tasks and features.</p>
-                            <a href="#" class="learn-link">Browse Tutorials <i class="fas fa-arrow-right"></i></a>
+                    <div class="learning-options">
+                        <div class="learning-option">
+                            <h3>Video tutorials</h3>
+                            <p>Watch step-by-step videos to learn your way around QuickBooks.</p>
                         </div>
-                        <div class="knowledge-option">
-                            <h3>FAQ Library</h3>
-                            <p>Answers to frequently asked questions about accounting software installation and usage.</p>
-                            <a href="#" class="learn-link">View FAQs <i class="fas fa-arrow-right"></i></a>
+                        <div class="learning-option">
+                            <h3>Webinars</h3>
+                            <p>Start with the basics. Try a 1-hour webinar with an expert to get familiar with QuickBooks.</p>
+                            <a href="#" class="learn-link">Find a webinar <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="knowledge-option">
-                            <h3>Troubleshooting Guides</h3>
-                            <p>Detailed guides to help you resolve common errors and performance issues.</p>
-                            <a href="#" class="learn-link">Access Guides <i class="fas fa-arrow-right"></i></a>
+                        <div class="learning-option">
+                            <h3>Tutorials & Videos</h3>
+                            <p>Learn more about QuickBooks by watching our instructional videos.</p>
+                            <a href="#" class="learn-link">Find a training class <i class="fas fa-arrow-right"></i></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Quick answers to common accounting software questions</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I migrate my data from one accounting software to another?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer comprehensive data migration services. Our experts will assess your current setup, create a migration plan, transfer your data securely, and verify the integrity of the transferred information. The process typically takes 2-5 business days depending on the complexity and volume of your data.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What should I do if my accounting software is running slowly?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Slow performance can result from various factors including large company files, insufficient system resources, or software conflicts. We recommend: 1) Verifying your system meets the software requirements, 2) Running the built-in file verification tools, 3) Checking for updates, and 4) Consulting with our support team for a comprehensive performance analysis.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How often should I back up my accounting data?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We recommend daily backups for active businesses, with weekly full backups stored offsite. Most accounting software includes automated backup features that can be scheduled according to your business needs. Our support team can help you configure optimal backup settings for your specific software and business requirements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can you help with multi-user setup for my accounting software?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we specialize in multi-user configurations for all major accounting software. Our services include user permission setup, network configuration, database server installation (if required), and training for your team on collaborative features. We ensure secure and efficient multi-user access tailored to your business workflow.</p>
                     </div>
                 </div>
             </div>
@@ -1272,57 +1039,50 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Our Support Team</h2>
-                <div class="contact-phone" onclick="showCallModal('Customer Service')">24/7 Support: +1-800-650-0424</div>
+                <h2>Need to get in touch?</h2>
+                <div class="contact-phone" onclick="showCallModal('Customer Service')">Toll Free: +1-734-796-7442</div>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-categories">
                     <div class="category-column">
-                        <h4>Quick Links</h4>
+                        <h4>Categories</h4>
                         <ul class="category-links">
                             <li><a href="#">Home</a></li>
-                            <li><a href="#software">Supported Software</a></li>
-                            <li><a href="#services">Our Services</a></li>
-                            <li><a href="#knowledge">Knowledge Base</a></li>
-                            <li><a href="#">System Status</a></li>
-                            <li><a href="#">Submit a Ticket</a></li>
-                            <li><a href="#">Live Chat</a></li>
-                            <li><a href="#">Client Portal</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms & Privacy</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="#">Authenticity</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Downloads</a></li>
                         </ul>
                     </div>
                     <div class="category-column">
-                        <h4>Resources</h4>
+                        <h4>Guide</h4>
                         <ul class="category-links">
-                            <li><a href="#">QuickBooks Guides</a></li>
-                            <li><a href="#">Xero Tutorials</a></li>
-                            <li><a href="#">Sage Documentation</a></li>
-                            <li><a href="#">FreshBooks Resources</a></li>
-                            <li><a href="#">Software Comparisons</a></li>
-                            <li><a href="#">Industry Updates</a></li>
+                            <li><a href="#">Quickbooks</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Affiliate</a></li>
+                            <li><a href="#">Readings</a></li>
                         </ul>
                     </div>
                     <div class="category-column">
-                        <h4>Contact Information</h4>
+                        <h4>Contact Info</h4>
                         <ul class="category-links">
-                            <li>+1-800-650-0424</li>
-                            <li>support@accounthelppro.com</li>
-                            <li>sales@accounthelppro.com</li>
-                            <li>123 Business Ave, Suite 500</li>
-                            <li>New York, NY 10001</li>
+                            <li>+1-734-796-7442</li>
+                            <li>info@qbo-solutions.com</li>
+                            <li>800 S Gay St STE 700, Knoxville, TN</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="customer-service">
-                    <h4>24/7 CUSTOMER SUPPORT</h4>
-                    <p>Our experts are available round the clock to assist you</p>
-                    <div class="contact-phone" onclick="showCallModal('24/7 Support')">+1-800-650-0424</div>
+                    <h4>CUSTOMER SERVICE</h4>
+                    <p>Open 24/7</p>
+                    <div class="contact-phone" onclick="showCallModal('Customer Service')">+1-734-796-7442</div>
                     <div class="payment-methods">
-                        <span>QuickBooks</span>
-                        <span>Xero</span>
-                        <span>Sage</span>
-                        <span>FreshBooks</span>
+                        
                     </div>
                 </div>
             </div>
@@ -1332,8 +1092,8 @@
     <!-- Call Modal -->
     <div class="call-modal" id="callModal">
         <div class="call-modal-content">
-            <h3>Connecting You to an Accounting Software Expert</h3>
-            <p>We're connecting you directly to an agent who specializes in <span id="agentDepartment">General Support</span>.</p>
+            <h3>Connecting You to a QuickBooks Expert</h3>
+            <p>We're connecting you directly to an agent who specializes in <span id="agentDepartment">Technical Support</span>.</p>
             
             <div class="agent-info">
                 <div class="agent-avatar">
@@ -1341,7 +1101,7 @@
                 </div>
                 <div class="agent-details">
                     <div class="agent-name" id="agentName">Alex Johnson</div>
-                    <div class="agent-role" id="agentRole">Certified Accounting Software Specialist</div>
+                    <div class="agent-role" id="agentRole">QuickBooks ProAdvisor</div>
                 </div>
             </div>
             
@@ -1351,7 +1111,7 @@
                 <div class="connecting-dot"></div>
             </div>
             
-            <div class="call-number">+1-800-650-0424</div>
+            <div class="call-number">+1-734-796-7442</div>
             
             <div class="modal-buttons">
                 <button class="modal-button call-button" onclick="initiateCall()">
@@ -1365,8 +1125,8 @@
     <!-- Disclaimer -->
     <section class="disclaimer">
         <div class="container">
-            <p>Disclaimer: AccountHelp Pro is an independent service provider for accounting software support. We are not affiliated with Intuit (QuickBooks), Xero, Sage, FreshBooks, or any other accounting software company mentioned on this website.</p>
-            <p>All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.</p>
+            <p>Disclaimer : QBO Solutions is an independent accounting firm & Authorized Reseller & Certified QuickBooks Pro-Advisor for QuickBooks Products.</p>
+            <p>All licenses are issued directly by Intuit & QuickBooks licenses are backed by Intuit with 60 days money back guarantee. We are not QuickBooks Or Intuit Inc., The registered logos, trademarks and brand names of Intuit Inc are mentioned on this website are solely used for reference purpose as per Intuit Certified QuickBooks ProAdvisor agreement. Other third party logos are used for reference purpose only and belong to their respective owners. We assume no liability or responsibility for any errors in the content of this website or such other materials.</p>
         </div>
     </section>
 
@@ -1375,8 +1135,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>AccountHelp Pro</h3>
-                    <p>Your trusted partner for accounting software support, training, and consultation services.</p>
+                    <h3>QBO Solutions</h3>
+                    <p>Certified QuickBooks ProAdvisors providing expert support and consulting services.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1388,34 +1148,33 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#software">Supported Software</a></li>
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#knowledge">Knowledge Base</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Learning</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Services</h3>
+                    <h3>QuickBooks Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Software Installation</a></li>
-                        <li><a href="#">Data Migration</a></li>
+                        <li><a href="#">Setup & Installation</a></li>
+                        <li><a href="#">Data Conversion</a></li>
                         <li><a href="#">Troubleshooting</a></li>
-                        <li><a href="#">Custom Reporting</a></li>
                         <li><a href="#">Training</a></li>
+                        <li><a href="#">Custom Reporting</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500, NY 10001</li>
-                        <li><i class="fas fa-phone"></i> +1-800-650-0424</li>
-                        <li><i class="fas fa-envelope"></i> support@accounthelppro.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Support Available</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 800 S Gay St STE 700, Knoxville, TN</li>
+                        <li><i class="fas fa-phone"></i> +1-734-796-7442</li>
+                        <li><i class="fas fa-envelope"></i> info@qbo-solutions.com</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 AccountHelp Pro. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2023 QBO Solutions. All rights reserved. QuickBooks is a registered trademark of Intuit Inc.</p>
             </div>
         </div>
     </footer>
@@ -1423,37 +1182,21 @@
     <script>
         // Simple script for interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Software selection cards
-            const softwareCards = document.querySelectorAll('.software-card');
-            softwareCards.forEach(card => {
+            // Product selection cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    softwareCards.forEach(c => c.style.border = 'none');
+                    productCards.forEach(c => c.style.border = 'none');
                     this.style.border = `2px solid var(--primary)`;
                 });
             });
             
-            // Service buttons
-            const serviceButtons = document.querySelectorAll('.service-button');
-            serviceButtons.forEach(button => {
+            // Buy buttons
+            const buyButtons = document.querySelectorAll('.buy-button');
+            buyButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const serviceName = this.closest('.service-card').querySelector('h3').textContent;
-                });
-            });
-
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
+                    const productName = this.closest('.shop-card').querySelector('h3').textContent;
+                    alert(`Thank you for your interest in ${productName}. You will be redirected to the checkout page.`);
                 });
             });
         });
@@ -1470,39 +1213,29 @@
             
             // Set random agent details based on department
             const agents = {
-                'General Support': [
+                'Main Support': [
                     { name: 'Sarah Williams', role: 'Senior Support Specialist' },
-                    { name: 'Michael Chen', role: 'Accounting Software Expert' },
+                    { name: 'Michael Chen', role: 'QuickBooks ProAdvisor' },
                     { name: 'Jessica Martinez', role: 'Customer Success Manager' }
                 ],
-                'QuickBooks Support': [
-                    { name: 'David Thompson', role: 'QuickBooks ProAdvisor' },
-                    { name: 'Amanda Lee', role: 'QuickBooks Desktop Specialist' },
-                    { name: 'Robert Johnson', role: 'QuickBooks Online Expert' }
-                ],
-                'Xero Support': [
-                    { name: 'Jennifer Adams', role: 'Xero Certified Advisor' },
-                    { name: 'Kevin Wilson', role: 'Cloud Accounting Specialist' },
-                    { name: 'Lisa Brown', role: 'Xero Integration Expert' }
-                ],
-                'Sage Support': [
-                    { name: 'Alex Johnson', role: 'Sage Business Cloud Specialist' },
-                    { name: 'Maria Garcia', role: 'Sage 50cloud Expert' },
-                    { name: 'James Smith', role: 'Sage Implementation Consultant' }
-                ],
                 'Technical Support': [
-                    { name: 'Thomas Wilson', role: 'Technical Support Engineer' },
-                    { name: 'Emily Davis', role: 'System Integration Specialist' },
-                    { name: 'Daniel Miller', role: 'Software Troubleshooter' }
+                    { name: 'David Thompson', role: 'Technical Support Engineer' },
+                    { name: 'Amanda Lee', role: 'QuickBooks Desktop Expert' },
+                    { name: 'Robert Johnson', role: 'System Integration Specialist' }
+                ],
+                'Learning Support': [
+                    { name: 'Jennifer Adams', role: 'Training Specialist' },
+                    { name: 'Kevin Wilson', role: 'QuickBooks Certified Trainer' },
+                    { name: 'Lisa Brown', role: 'Educational Content Manager' }
                 ],
                 'Customer Service': [
-                    { name: 'Rachel Green', role: 'Customer Service Manager' },
-                    { name: 'Brian Taylor', role: 'Account Specialist' },
-                    { name: 'Olivia Brown', role: 'Client Relations Coordinator' }
+                    { name: 'Alex Johnson', role: 'Customer Service Manager' },
+                    { name: 'Maria Garcia', role: 'Account Specialist' },
+                    { name: 'James Smith', role: 'Client Relations Coordinator' }
                 ]
             };
             
-            const departmentAgents = agents[department] || agents['General Support'];
+            const departmentAgents = agents[department] || agents['Main Support'];
             const randomAgent = departmentAgents[Math.floor(Math.random() * departmentAgents.length)];
             
             agentName.textContent = randomAgent.name;
@@ -1519,11 +1252,11 @@
         function initiateCall() {
             // In a real implementation, this would initiate a phone call
             // For this demo, we'll just show an alert and close the modal
-            alert('Initiating call to +1-800-650-0424... You are now being connected to an accounting software expert.');
+            alert('Initiating call to +1-734-796-7442... You are now being connected to a QuickBooks expert.');
             closeCallModal();
             
             // In a real implementation, you might use:
-            // window.location.href = 'tel:+1-800-650-0424';
+            // window.location.href = 'tel:+1-734-796-7442';
         }
 
         // Close modal when clicking outside of it
