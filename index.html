@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Software Helpdesk | Expert Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2CA01C; /* Accounting green */
+            --primary-dark: #1f7a15;
+            --secondary: #0077C5; /* Professional blue */
+            --dark: #333333;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --accent: #FF6633;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-phone:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Software Support Section */
+        .software-support {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .software-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .software-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .software-icon {
+            background-color: var(--secondary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .software-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .support-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .support-content {
+            flex: 1;
+        }
+
+        .support-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .support-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .support-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(44, 160, 28, 0.1);
+        }
+
+        .support-phone:hover {
+            background-color: rgba(44, 160, 28, 0.2);
+            transform: scale(1.05);
+        }
+
+        .support-chat {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .support-chat:hover {
+            background-color: #0066b3;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card-content {
+            padding: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .service-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Knowledge Base Section */
+        .knowledge-section {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+
+        .knowledge-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .knowledge-info {
+            flex: 1;
+        }
+
+        .knowledge-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .knowledge-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .knowledge-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(44, 160, 28, 0.1);
+        }
+
+        .knowledge-phone:hover {
+            background-color: rgba(44, 160, 28, 0.2);
+            transform: scale(1.05);
+        }
+
+        .knowledge-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .knowledge-option {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .knowledge-option h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .knowledge-option p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .learn-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .learn-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .contact-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(44, 160, 28, 0.1);
+        }
+
+        .contact-phone:hover {
+            background-color: rgba(44, 160, 28, 0.2);
+            transform: scale(1.05);
+        }
+
+        .contact-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .category-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .category-links {
+            list-style: none;
+        }
+
+        .category-links li {
+            margin-bottom: 8px;
+        }
+
+        .category-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .category-links a:hover {
+            color: var(--primary);
+        }
+
+        .customer-service {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .customer-service h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .customer-service p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .payment-methods span {
+            background-color: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Call Modal */
+        .call-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .call-modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalAppear 0.3s ease-out;
+        }
+
+        @keyframes modalAppear {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .call-modal h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .call-modal p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .agent-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .agent-details {
+            text-align: left;
+        }
+
+        .agent-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .agent-role {
+            color: var(--gray);
+        }
+
+        .connecting-animation {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .connecting-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        .connecting-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .connecting-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .call-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+            padding: 10px;
+            background-color: rgba(44, 160, 28, 0.1);
+            border-radius: 5px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .modal-button {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .call-button {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .call-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .cancel-button {
+            background-color: var(--light-gray);
+            color: var(--dark);
+        }
+
+        .cancel-button:hover {
+            background-color: #d1d5db;
+        }
+
+        /* Status Section */
+        .status-section {
+            padding: 60px 0;
+            background-color: #f8fafc;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .status-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+
+        .status-operational {
+            background-color: var(--success);
+        }
+
+        .status-degraded {
+            background-color: var(--warning);
+        }
+
+        .status-outage {
+            background-color: var(--danger);
+        }
+
+        .status-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .status-card p {
+            color: var(--gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: var(--light);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e2e8f0;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: white;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            padding: 40px 0;
+            background-color: var(--dark);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer p {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .support-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .knowledge-content {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                24/7 Accounting Software Support: +1-800-650-0424
+            </div>
+        </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">AccountHelp Pro</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#software">Software</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#knowledge">Knowledge Base</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="cta-button">Get Support</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Expert Accounting Software Support</h1>
+            <p>Get instant help for all your accounting software needs - from installation and setup to troubleshooting and optimization.</p>
+            <div class="hero-phone" onclick="showCallModal('General Support')">24/7 Support: +1-800-650-0424</div>
+            <a href="#software" class="cta-button">Get Help Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Helpdesk?</h2>
+                <p>We provide comprehensive support for all major accounting software platforms</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Expert Support</h3>
+                    <p>Round-the-clock assistance from certified accounting software specialists</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Quick Problem Resolution</h3>
+                    <p>Fast and effective solutions to get your accounting software running smoothly</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Data Security</h3>
+                    <p>Your financial data is protected with enterprise-grade security measures</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training & Guidance</h3>
+                    <p>Comprehensive training to help you master your accounting software</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Support Section -->
+    <section class="software-support" id="software">
+        <div class="container">
+            <div class="section-title">
+                <h2>Software We Support</h2>
+                <p>Our experts are certified in all major accounting software platforms</p>
+            </div>
+            <div class="software-grid">
+                <div class="software-card" onclick="showCallModal('QuickBooks Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>QuickBooks</h3>
+                    <p>Desktop & Online versions</p>
+                </div>
+                <div class="software-card" onclick="showCallModal('Xero Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Xero</h3>
+                    <p>Cloud accounting platform</p>
+                </div>
+                <div class="software-card" onclick="showCallModal('Sage Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Sage</h3>
+                    <p>50cloud & Business Cloud</p>
+                </div>
+                <div class="software-card" onclick="showCallModal('FreshBooks Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>FreshBooks</h3>
+                    <p>Invoice & accounting software</p>
+                </div>
+                <div class="software-card" onclick="showCallModal('Zoho Books Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Zoho Books</h3>
+                    <p>Complete business solution</p>
+                </div>
+                <div class="software-card" onclick="showCallModal('Wave Support')">
+                    <div class="software-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3>Wave</h3>
+                    <p>Free accounting software</p>
+                </div>
+            </div>
+
+            <div class="support-section">
+                <div class="support-content">
+                    <h3>Comprehensive Accounting Software Support</h3>
+                    <p>From simple installation issues to complex multi-company setups, our certified accounting software specialists have you covered.</p>
+                    <div class="support-phone" onclick="showCallModal('Technical Support')">Expert Help: +1-800-650-0424</div>
+                </div>
+                <div class="support-chat-container">
+                    <h4>Need immediate assistance?</h4>
+                    <p>Chat with our experts in real-time</p>
+                    <a href="#" class="support-chat">Start Live Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive accounting software solutions for businesses of all sizes</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Software Installation & Setup</h3>
+                        <p>Professional installation and configuration of your accounting software for optimal performance</p>
+                        <button class="service-button" onclick="showCallModal('Installation Service')">Get This Service</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Data Migration & Conversion</h3>
+                        <p>Seamless transfer of your financial data between different accounting systems</p>
+                        <button class="service-button" onclick="showCallModal('Data Migration Service')">Get This Service</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Troubleshooting & Repair</h3>
+                        <p>Diagnose and fix errors, crashes, and performance issues in your accounting software</p>
+                        <button class="service-button" onclick="showCallModal('Troubleshooting Service')">Get This Service</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Custom Reporting</h3>
+                        <p>Create tailored financial reports and dashboards for your specific business needs</p>
+                        <button class="service-button" onclick="showCallModal('Reporting Service')">Get This Service</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Training & Consultation</h3>
+                        <p>One-on-one or group training sessions to maximize your accounting software usage</p>
+                        <button class="service-button" onclick="showCallModal('Training Service')">Get This Service</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <h3>Integration Support</h3>
+                        <p>Connect your accounting software with other business applications and systems</p>
+                        <button class="service-button" onclick="showCallModal('Integration Service')">Get This Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Section -->
+    <section class="status-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>System Status</h2>
+                <p>Current status of supported accounting software platforms</p>
+            </div>
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-indicator status-operational"></div>
+                    <h3>QuickBooks</h3>
+                    <p>All systems operational</p>
+                </div>
+                <div class="status-card">
+                    <div class="status-indicator status-operational"></div>
+                    <h3>Xero</h3>
+                    <p>All systems operational</p>
+                </div>
+                <div class="status-card">
+                    <div class="status-indicator status-degraded"></div>
+                    <h3>Sage</h3>
+                    <p>Minor performance issues</p>
+                </div>
+                <div class="status-card">
+                    <div class="status-indicator status-operational"></div>
+                    <h3>FreshBooks</h3>
+                    <p>All systems operational</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Base Section -->
+    <section class="knowledge-section" id="knowledge">
+        <div class="container">
+            <div class="knowledge-content">
+                <div class="knowledge-info">
+                    <h2>Knowledge Base & Resources</h2>
+                    <p>Access our comprehensive library of tutorials, guides, and troubleshooting articles.</p>
+                    <div class="knowledge-phone" onclick="showCallModal('Knowledge Base Support')">Need Help? +1-800-650-0424</div>
+                    
+                    <div class="knowledge-options">
+                        <div class="knowledge-option">
+                            <h3>Video Tutorials</h3>
+                            <p>Step-by-step video guides for common accounting software tasks and features.</p>
+                            <a href="#" class="learn-link">Browse Tutorials <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="knowledge-option">
+                            <h3>FAQ Library</h3>
+                            <p>Answers to frequently asked questions about accounting software installation and usage.</p>
+                            <a href="#" class="learn-link">View FAQs <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="knowledge-option">
+                            <h3>Troubleshooting Guides</h3>
+                            <p>Detailed guides to help you resolve common errors and performance issues.</p>
+                            <a href="#" class="learn-link">Access Guides <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common accounting software questions</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I migrate my data from one accounting software to another?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer comprehensive data migration services. Our experts will assess your current setup, create a migration plan, transfer your data securely, and verify the integrity of the transferred information. The process typically takes 2-5 business days depending on the complexity and volume of your data.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I do if my accounting software is running slowly?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Slow performance can result from various factors including large company files, insufficient system resources, or software conflicts. We recommend: 1) Verifying your system meets the software requirements, 2) Running the built-in file verification tools, 3) Checking for updates, and 4) Consulting with our support team for a comprehensive performance analysis.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How often should I back up my accounting data?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend daily backups for active businesses, with weekly full backups stored offsite. Most accounting software includes automated backup features that can be scheduled according to your business needs. Our support team can help you configure optimal backup settings for your specific software and business requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can you help with multi-user setup for my accounting software?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in multi-user configurations for all major accounting software. Our services include user permission setup, network configuration, database server installation (if required), and training for your team on collaborative features. We ensure secure and efficient multi-user access tailored to your business workflow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Support Team</h2>
+                <div class="contact-phone" onclick="showCallModal('Customer Service')">24/7 Support: +1-800-650-0424</div>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-categories">
+                    <div class="category-column">
+                        <h4>Quick Links</h4>
+                        <ul class="category-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#software">Supported Software</a></li>
+                            <li><a href="#services">Our Services</a></li>
+                            <li><a href="#knowledge">Knowledge Base</a></li>
+                            <li><a href="#">System Status</a></li>
+                            <li><a href="#">Submit a Ticket</a></li>
+                            <li><a href="#">Live Chat</a></li>
+                            <li><a href="#">Client Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="category-column">
+                        <h4>Resources</h4>
+                        <ul class="category-links">
+                            <li><a href="#">QuickBooks Guides</a></li>
+                            <li><a href="#">Xero Tutorials</a></li>
+                            <li><a href="#">Sage Documentation</a></li>
+                            <li><a href="#">FreshBooks Resources</a></li>
+                            <li><a href="#">Software Comparisons</a></li>
+                            <li><a href="#">Industry Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="category-column">
+                        <h4>Contact Information</h4>
+                        <ul class="category-links">
+                            <li>+1-800-650-0424</li>
+                            <li>support@accounthelppro.com</li>
+                            <li>sales@accounthelppro.com</li>
+                            <li>123 Business Ave, Suite 500</li>
+                            <li>New York, NY 10001</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="customer-service">
+                    <h4>24/7 CUSTOMER SUPPORT</h4>
+                    <p>Our experts are available round the clock to assist you</p>
+                    <div class="contact-phone" onclick="showCallModal('24/7 Support')">+1-800-650-0424</div>
+                    <div class="payment-methods">
+                        <span>QuickBooks</span>
+                        <span>Xero</span>
+                        <span>Sage</span>
+                        <span>FreshBooks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Modal -->
+    <div class="call-modal" id="callModal">
+        <div class="call-modal-content">
+            <h3>Connecting You to an Accounting Software Expert</h3>
+            <p>We're connecting you directly to an agent who specializes in <span id="agentDepartment">General Support</span>.</p>
+            
+            <div class="agent-info">
+                <div class="agent-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="agent-details">
+                    <div class="agent-name" id="agentName">Alex Johnson</div>
+                    <div class="agent-role" id="agentRole">Certified Accounting Software Specialist</div>
+                </div>
+            </div>
+            
+            <div class="connecting-animation">
+                <div class="connecting-dot"></div>
+                <div class="connecting-dot"></div>
+                <div class="connecting-dot"></div>
+            </div>
+            
+            <div class="call-number">+1-800-650-0424</div>
+            
+            <div class="modal-buttons">
+                <button class="modal-button call-button" onclick="initiateCall()">
+                    <i class="fas fa-phone"></i> Call Now
+                </button>
+                <button class="modal-button cancel-button" onclick="closeCallModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <div class="container">
+            <p>Disclaimer: AccountHelp Pro is an independent service provider for accounting software support. We are not affiliated with Intuit (QuickBooks), Xero, Sage, FreshBooks, or any other accounting software company mentioned on this website.</p>
+            <p>All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AccountHelp Pro</h3>
+                    <p>Your trusted partner for accounting software support, training, and consultation services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#software">Supported Software</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#knowledge">Knowledge Base</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Software Installation</a></li>
+                        <li><a href="#">Data Migration</a></li>
+                        <li><a href="#">Troubleshooting</a></li>
+                        <li><a href="#">Custom Reporting</a></li>
+                        <li><a href="#">Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1-800-650-0424</li>
+                        <li><i class="fas fa-envelope"></i> support@accounthelppro.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Support Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AccountHelp Pro. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Software selection cards
+            const softwareCards = document.querySelectorAll('.software-card');
+            softwareCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    softwareCards.forEach(c => c.style.border = 'none');
+                    this.style.border = `2px solid var(--primary)`;
+                });
+            });
+            
+            // Service buttons
+            const serviceButtons = document.querySelectorAll('.service-button');
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceName = this.closest('.service-card').querySelector('h3').textContent;
+                });
+            });
+
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+
+        // Call Modal Functions
+        function showCallModal(department) {
+            const modal = document.getElementById('callModal');
+            const agentDepartment = document.getElementById('agentDepartment');
+            const agentName = document.getElementById('agentName');
+            const agentRole = document.getElementById('agentRole');
+            
+            // Set department
+            agentDepartment.textContent = department;
+            
+            // Set random agent details based on department
+            const agents = {
+                'General Support': [
+                    { name: 'Sarah Williams', role: 'Senior Support Specialist' },
+                    { name: 'Michael Chen', role: 'Accounting Software Expert' },
+                    { name: 'Jessica Martinez', role: 'Customer Success Manager' }
+                ],
+                'QuickBooks Support': [
+                    { name: 'David Thompson', role: 'QuickBooks ProAdvisor' },
+                    { name: 'Amanda Lee', role: 'QuickBooks Desktop Specialist' },
+                    { name: 'Robert Johnson', role: 'QuickBooks Online Expert' }
+                ],
+                'Xero Support': [
+                    { name: 'Jennifer Adams', role: 'Xero Certified Advisor' },
+                    { name: 'Kevin Wilson', role: 'Cloud Accounting Specialist' },
+                    { name: 'Lisa Brown', role: 'Xero Integration Expert' }
+                ],
+                'Sage Support': [
+                    { name: 'Alex Johnson', role: 'Sage Business Cloud Specialist' },
+                    { name: 'Maria Garcia', role: 'Sage 50cloud Expert' },
+                    { name: 'James Smith', role: 'Sage Implementation Consultant' }
+                ],
+                'Technical Support': [
+                    { name: 'Thomas Wilson', role: 'Technical Support Engineer' },
+                    { name: 'Emily Davis', role: 'System Integration Specialist' },
+                    { name: 'Daniel Miller', role: 'Software Troubleshooter' }
+                ],
+                'Customer Service': [
+                    { name: 'Rachel Green', role: 'Customer Service Manager' },
+                    { name: 'Brian Taylor', role: 'Account Specialist' },
+                    { name: 'Olivia Brown', role: 'Client Relations Coordinator' }
+                ]
+            };
+            
+            const departmentAgents = agents[department] || agents['General Support'];
+            const randomAgent = departmentAgents[Math.floor(Math.random() * departmentAgents.length)];
+            
+            agentName.textContent = randomAgent.name;
+            agentRole.textContent = randomAgent.role;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeCallModal() {
+            const modal = document.getElementById('callModal');
+            modal.style.display = 'none';
+        }
+
+        function initiateCall() {
+            // In a real implementation, this would initiate a phone call
+            // For this demo, we'll just show an alert and close the modal
+            alert('Initiating call to +1-800-650-0424... You are now being connected to an accounting software expert.');
+            closeCallModal();
+            
+            // In a real implementation, you might use:
+            // window.location.href = 'tel:+1-800-650-0424';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('callModal');
+            if (event.target === modal) {
+                closeCallModal();
+            }
+        }
+    </script>
+</body>
+</html>
